@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ApiController < ApplicationController::API
+    class ApiController < ApplicationController
       include ActionController::HttpAuthentication::Token
       before_action :set_user
 
