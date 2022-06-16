@@ -11,8 +11,8 @@ local:
    service: S3
    access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
    secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-   region: ap-south-1 <%= ENV['AWS_SECRET_ACCESS_REGION'] %>
-   bucket: portfolio-rails-usama <%= ENV['AWS_SECRET_ACCESS_BUCKET'] %>
+   region: <%= ENV['AWS_SECRET_ACCESS_REGION'] %>
+   bucket: <%= ENV['AWS_SECRET_ACCESS_BUCKET'] %>
 #amazon:
 #   service: S3
 #   access_key_id: AKIAQ7NWMWRWPFGHFP5K
