@@ -13,7 +13,12 @@ local:
 #   secret_access_key: <%#= Rails.application.credentials.dig(:aws, :secret_access_key) %>
 #   region: ap-south-1
 #   bucket: portfolio-rails-usama
-
+amazon:
+   service: S3
+   access_key_id: AKIAQ7NWMWRWPFGHFP5K
+   secret_access_key: gxTLWLEfdPSDx7+Evt8UYH8rAboFgptniJehcBJK
+   region: ap-south-1
+   bucket: portfolio-rails-usama
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
