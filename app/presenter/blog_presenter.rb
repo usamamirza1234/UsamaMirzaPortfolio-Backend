@@ -1,4 +1,5 @@
-class BlogsRepresenter
+# frozen_string_literal: true
+class BlogPresenter
   def initialize(blogs)
     @blogs = blogs
   end

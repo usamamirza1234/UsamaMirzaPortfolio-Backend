@@ -47,4 +47,6 @@ group :development do
 end
 
 gem "devise"
+gem 'jwt'
+gem 'aws-sdk-s3'
 # gem "simple_token_authentication"

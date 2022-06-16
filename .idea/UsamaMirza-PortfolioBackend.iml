@@ -39,6 +39,12 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.0.3, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.3, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.3, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.1.1, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.476.0, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.116.0, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.44.0, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.96.1, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.2.4, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.18, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.12.0, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, rbenv: 2.7.3) [gem]" level="application" />
@@ -53,6 +59,8 @@
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.10.0, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="io-console (v0.5.11, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.4.1, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.4.0, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jwt (v2.4.1, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.18.0, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.2, rbenv: 2.7.3) [gem]" level="application" />

@@ -1,84 +1,39 @@
 module Api
   module V1
-    class SessionsController < Devise::SessionsController
-      before_action :sign_in_params, only: :create
-      before_action :load_user, only: :create
-      # sign in
-      def create
-        if @user.valid_password?(sign_in_params[:password])
-          sign_in "user", @user
-          render json: {
-            messages: "Signed In Successfully",
-            is_success: true,
-            data: {user: @user}
-          }, status: :ok
-        else
-          render json: {
-            messages: "Signed In Failed - Unauthorized",
-            is_success: false,
-            data: {}
-          }, status: :unauthorized
-        end
-      end
+    class ApiController < ApplicationController::API
+      include ActionController::HttpAuthentication::Token
+      before_action :set_user
 
       private
-      def sign_in_params
-        params.require(:user).permit :email, :password
+
+      def set_user
+        # authenticate_user!
+        # current_user.blank?
+        token, _option = token_and_options(request)
+        user_id = AuthenticationTokenService.decode(token)
+        User.find(user_id)
+      rescue JWT::DecodeError
+        render json: failure_messages(:bad_request, "Token not found", [],"Token is null"), status: :bad_request
+      rescue JWT::VerificationError
+        render json: failure_messages(:unprocessable_entity, "Invalid or expired token", []), status: :unprocessable_entity
+      rescue ActiveRecord::RecordNotFound
+        render json: failure_messages(:not_found, "No User Found", []), status: :not_found
       end
 
-      def load_user
-        @user = User.find_for_database_authentication(email: sign_in_params[:email])
-        if @user
-          @user
-        else
-          render json: {
-            messages: "Cannot get User",
-            is_success: false,
-            data: {}
-          }, status: 401
-        end
+      def failure_messages(status, message, data, *args)
+        {
+          status: status, messages: message, errors: args, data: data
+        }
       end
+      def success_messages(status,message,data, *args)
+        {
+          status: status,
+          messages: message,
+          data: data,
+          errors: args
+        }
+      end
+
     end
   end
 end
-#
-# class Api::V1::SessionsController < Devise::SessionsController
-#   before_action :sign_in_params, only: :create
-#   before_action :load_user, only: :create
-#   # sign in
-#   def create
-#     if @user.valid_password?(sign_in_params[:password])
-#       sign_in "user", @user
-#       render
-#       render json: {
-#         messages: "Signed In Successfully",
-#         is_success: true,
-#         data: {user: @user}
-#       }, status: :ok
-#     else
-#       render json: {
-#         messages: "Signed In Failed - Unauthorized",
-#         is_success: false,
-#         data: {}
-#       }, status: :unauthorized
-#     end
-#   end
-#
-#   private
-#   def sign_in_params
-#     params.require(:user).permit :email, :password
-#   end
-#
-#   def load_user
-#     @user = User.find_for_database_authentication(email: sign_in_params[:email])
-#     if @user
-#       @user
-#     else
-#       render json: {
-#         messages: "Cannot get User",
-#         is_success: false,
-#         data: {}
-#       }, status: 401
-#     end
-#   end
-# end

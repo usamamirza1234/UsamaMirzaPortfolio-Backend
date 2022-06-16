@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+  get "/s", to: "welcome#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_for :users
 
@@ -8,8 +10,8 @@ Rails.application.routes.draw do
         post "sign_up", to: "registrations#create"
         post "sign_in", to: "sessions#create"
       end
+      resources :blogs
+
     end
   end
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

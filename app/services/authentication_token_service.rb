@@ -2,7 +2,7 @@ class AuthenticationTokenService
   HMAC_SECRET = 'my$ecretK3y'
   ALGORITHM_TYPE ='HS256'
 
-  def self.call(id)
+  def self.encode(id)
     # The secret must be a string. A JWT::DecodeError will be raised if it isn't provided.
     payload = { user_id: id}
     JWT.encode payload, HMAC_SECRET, ALGORITHM_TYPE
